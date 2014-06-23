@@ -1,0 +1,177 @@
+diff --git a/placeholder-use_title-0.patch b/placeholder-use_title-0.patch
+new file mode 100644
+index 0000000..984f0fa
+--- /dev/null
++++ b/placeholder-use_title-0.patch
+@@ -0,0 +1,65 @@
++diff --git a/placeholder.install b/placeholder.install
++index 0a8789a..d5ffca7 100644
++--- a/placeholder.install
+++++ b/placeholder.install
++@@ -6,6 +6,16 @@
++  */
++ 
++ /**
+++ * Implements hook_uninstall().
+++ */
+++function placeholder_uninstall() {
+++
+++  variable_del('placholder_use_title');
+++  variable_del('placeholder_include_admin');
+++
+++}
+++
+++/**
++  * Implements hook_requirements().
++  */
++ function placeholder_requirements($phase) {
++diff --git a/placeholder.module b/placeholder.module
++index 07ae6af..99b819e 100644
++--- a/placeholder.module
+++++ b/placeholder.module
++@@ -6,6 +6,23 @@
++  */
++ 
++ /**
+++ * Implements hook_menu().
+++ */
+++function placeholder_menu() {
+++
+++  $items['admin/config/user-interface/placeholder'] = array(
+++    'title' => 'Placeholder',
+++    'description' => 'Settings for html5 form element placeholders',
+++    'page callback' => 'drupal_get_form',
+++    'page arguments' => array('placeholder_config_form'),
+++    'access arguments' => array('administer site configuration'),
+++    'file' => 'placeholder.admin.inc',
+++  );
+++
+++  return $items;
+++}
+++
+++/**
++  * Implements hook_element_info_alter().
++  */
++ function placeholder_element_info_alter(&$types) {
++@@ -30,6 +47,15 @@ function placeholder_element_info_alter(&$types) {
++  *   The processed element.
++  */
++ function placeholder_process_placeholder($element) {
+++
+++  // Auto populate the placeholder property with the title if configured
+++  if (variable_get('placeholder_use_title', FALSE) && isset($element['#title']) && !isset($element['#placeholder'])) {
+++    // Only add to admin pages if enabled
+++    if (!path_is_admin(current_path()) || variable_get('placeholder_include_admin', FALSE)) {
+++      $element['#placeholder'] = $element['#title'];
+++    }
+++  }
+++
++   if (isset($element['#placeholder']) || isset($element['#attributes']['placeholder'])) {
++     // Set the placeholder attribute, if we need to.
++     if (!isset($element['#attributes']['placeholder'])) {
+diff --git a/placeholder.admin.inc b/placeholder.admin.inc
+new file mode 100644
+index 0000000..9c24769
+--- /dev/null
++++ b/placeholder.admin.inc
+@@ -0,0 +1,35 @@
++<?php
++
++/**
++ * @file
++ * Administration pages and functions for placeholder module
++ */
++
++/**
++ * Configuration form.
++ */
++function placeholder_config_form() {
++  $form = array();
++
++  $form['placeholder_auto'] = array(
++    '#type' => 'fieldset',
++    '#title' => t('Automatic placeholders'),
++    '#collapsible' => FALSE,
++  );
++
++  $form['placeholder_auto']['placeholder_use_title'] = array(
++    '#type' => 'checkbox',
++    '#title' => t('Automatically use label as placeholder'),
++    '#description' => t('Automatically use the field label (#title) for all textfield and textarea fields if an explicit #placeholder is not set.'),
++    '#default_value' => variable_get('placeholder_use_title', FALSE),
++  );
++
++  $form['placeholder_auto']['placeholder_include_admin'] = array(
++    '#type' => 'checkbox',
++    '#title' => t('Include admin forms?'),
++    '#description' => t('Also automatically use field labels as placeholders for administration page forms'),
++    '#default_value' => variable_get('placeholder_include_admin', FALSE),
++  );
++
++  return system_settings_form($form);
++}
+diff --git a/placeholder.install b/placeholder.install
+index 0a8789a..d5ffca7 100644
+--- a/placeholder.install
++++ b/placeholder.install
+@@ -6,6 +6,16 @@
+  */
+ 
+ /**
++ * Implements hook_uninstall().
++ */
++function placeholder_uninstall() {
++
++  variable_del('placholder_use_title');
++  variable_del('placeholder_include_admin');
++
++}
++
++/**
+  * Implements hook_requirements().
+  */
+ function placeholder_requirements($phase) {
+diff --git a/placeholder.module b/placeholder.module
+index 07ae6af..99b819e 100644
+--- a/placeholder.module
++++ b/placeholder.module
+@@ -6,6 +6,23 @@
+  */
+ 
+ /**
++ * Implements hook_menu().
++ */
++function placeholder_menu() {
++
++  $items['admin/config/user-interface/placeholder'] = array(
++    'title' => 'Placeholder',
++    'description' => 'Settings for html5 form element placeholders',
++    'page callback' => 'drupal_get_form',
++    'page arguments' => array('placeholder_config_form'),
++    'access arguments' => array('administer site configuration'),
++    'file' => 'placeholder.admin.inc',
++  );
++
++  return $items;
++}
++
++/**
+  * Implements hook_element_info_alter().
+  */
+ function placeholder_element_info_alter(&$types) {
+@@ -30,6 +47,15 @@ function placeholder_element_info_alter(&$types) {
+  *   The processed element.
+  */
+ function placeholder_process_placeholder($element) {
++
++  // Auto populate the placeholder property with the title if configured
++  if (variable_get('placeholder_use_title', FALSE) && isset($element['#title']) && !isset($element['#placeholder'])) {
++    // Only add to admin pages if enabled
++    if (!path_is_admin(current_path()) || variable_get('placeholder_include_admin', FALSE)) {
++      $element['#placeholder'] = $element['#title'];
++    }
++  }
++
+   if (isset($element['#placeholder']) || isset($element['#attributes']['placeholder'])) {
+     // Set the placeholder attribute, if we need to.
+     if (!isset($element['#attributes']['placeholder'])) {

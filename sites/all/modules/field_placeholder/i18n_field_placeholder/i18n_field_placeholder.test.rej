@@ -1,0 +1,23 @@
+--- i18n_field_placeholder/i18n_field_placeholder.test
++++ i18n_field_placeholder/i18n_field_placeholder.test
+@@ -116,5 +116,20 @@
+     $this->drupalGet($this->secondary_language . '/node/add/' . $this->hyphen_type);
+     $this->assertText($label_translation[$this->secondary_language], 'Field label is translated');
+     $this->assertRaw('placeholder="' . $placeholder_translation[$this->secondary_language], 'Field description is translated');
++
++    // Test Label as placeholder feature.
++    $edit = array(
++      'instance[use_title_as_placeholder]' => 1,
++    );
++
++    $this->drupalPost('admin/structure/types/manage/' . $this->hyphen_type . '/fields/field_' . $field_name, $edit, t('Save settings'));
++
++    // Test untranslated values in default language.
++    $this->drupalGet('node/add/' . $this->hyphen_type);
++    $this->assertRaw('placeholder="' . $label, 'Field description is not translated');
++
++    // Test translated values in secondary language.
++    $this->drupalGet($this->secondary_language . '/node/add/' . $this->hyphen_type);
++    $this->assertRaw('placeholder="' . $label_translation[$this->secondary_language], 'Field description is translated');
+   }
+ }

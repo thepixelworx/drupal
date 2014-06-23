@@ -1,0 +1,146 @@
+From 0c0ca5af2c7f2eabe48127240bac70fc987e7439 Mon Sep 17 00:00:00 2001
+From: capynet <capy.net@gmail.com>
+Date: Mon, 26 May 2014 14:58:38 +0200
+Subject: [PATCH] Allow lablel as placeholder
+
+---
+ field_placeholder.module                           |   49 ++++++++++++++++++--
+ field_placeholder.test                             |   20 ++++++++
+ i18n_field_placeholder/i18n_field_placeholder.test |   15 ++++++
+ 3 files changed, 79 insertions(+), 5 deletions(-)
+
+diff --git a/field_placeholder.module b/field_placeholder.module
+index 417a25a..7b6482a 100644
+--- a/field_placeholder.module
++++ b/field_placeholder.module
+@@ -13,13 +13,45 @@
+  */
+ function field_placeholder_form_field_ui_field_edit_form_alter(&$form, &$form_state) {
+   if (in_array($form['#instance']['widget']['type'], field_placeholder_get_widget_types())) {
+-    $form['instance']['placeholder'] = array(
++    $settings = isset($form['#instance']) ? $form['#instance'] : array();
++
++    $form['instance']['placeholder_wrapper'] = array(
++      '#type' => 'fieldset',
++      '#title' => t('Placeholder settings'),
++      '#weight' => -4,
++    );
++
++    $form['instance']['placeholder_wrapper']['use_title_as_placeholder'] = array(
++      '#type' => 'radios',
++      '#title' => t('Placeholder source'),
++      '#options' => array(t('Set manual placeholder'), t('Use label as placeholder')),
++      '#default_value' => isset($settings['use_title_as_placeholder']) ? $settings['use_title_as_placeholder'] : 0,
++      '#parents' => array('instance', 'use_title_as_placeholder'),
++    );
++
++    $form['instance']['placeholder_wrapper']['placeholder'] = array(
+       '#type' => 'textfield',
+       '#title' => t('Placeholder'),
+-      '#description' => t('Placeholder value for this field instance'),
+-      '#weight' => -4,
+-      '#default_value' => isset($form['#instance']['placeholder']) ? $form['#instance']['placeholder'] : '',
++      '#description' => t('Placeholder value for this field instance.'),
++      '#default_value' => isset($settings['placeholder']) ? $settings['placeholder'] : '',
++      '#parents' => array('instance', 'placeholder'),
++      '#states' => array(
++        'visible' => array(
++          ':input[name="instance[use_title_as_placeholder]"]' => array('value' => 0),
++        )
++      )
+     );
++
++    $form['instance']['placeholder_wrapper']['info_use_label'] = array(
++      '#type' => 'item',
++      '#markup' => t('Selecting this option, the label of the element will be replaced by the placeholder.'),
++      '#states' => array(
++        'visible' => array(
++          ':input[name="instance[use_title_as_placeholder]"]' => array('value' => 1),
++        )
++      )
++    );
++
+   }
+ }
+ 
+@@ -32,7 +64,14 @@ function field_placeholder_field_widget_form_alter(&$element, &$form_state, $con
+     field_placeholder_add_non_html5_support();
+     $placeholder = field_placeholder_get_widget($context['instance']['widget']['type']);
+     $instance = module_exists('i18n_field_placeholder') ? i18n_string_object_translate('field_instance', $context['instance']) : $context['instance'];
+-    $element[$placeholder]['#attributes']['placeholder'] = check_plain($instance['placeholder']);
++
++    if ($context['instance']['use_title_as_placeholder']) {
++      $element[$placeholder]['#title_display'] = "invisible";
++      $element[$placeholder]['#attributes']['placeholder'] = $element[$placeholder]['#title'];
++    }
++    else {
++      $element[$placeholder]['#attributes']['placeholder'] = check_plain($instance['placeholder']);
++    }
+   }
+ }
+ 
+diff --git a/field_placeholder.test b/field_placeholder.test
+index 014d4ee..64d6017 100644
+--- a/field_placeholder.test
++++ b/field_placeholder.test
+@@ -114,6 +114,7 @@ class FieldPlaceholderTestCase extends DrupalWebTestCase {
+       'fields[_add_new_field][type]' => 'text_with_summary',
+       'fields[_add_new_field][widget_type]' => 'text_textarea_with_summary',
+       'fields[_add_new_field][label]' => 'Text with summary',
++      'fields[_add_new_field][title]' => 'Text with summary',
+       'fields[_add_new_field][field_name]' => 'summary',
+     );
+     $instance_settings = array(
+@@ -140,5 +141,24 @@ class FieldPlaceholderTestCase extends DrupalWebTestCase {
+     $this->assertRaw('placeholder="Textarea placeholder"', 'Textarea field placeholder displayed');
+     $this->assertRaw('placeholder="Summary placeholder"', 'Text with summary field placeholder displayed');
+     $this->assertRaw('placeholder="Integer placeholder"', 'Integer field placeholder displayed');
++
++    // Test Label as placeholder feature.
++    $edit = array(
++      'instance[use_title_as_placeholder]' => 1,
++    );
++    $field_types = array('text', 'longtext', 'summary', 'integer');
++    foreach ($field_types as $field_type) {
++      $this->drupalPost('admin/structure/types/manage/' . $this->hyphen_type . '/fields/field_' . $field_type, $edit, t('Save settings'));
++    }
++
++    // Go to node creation page.
++    $this->drupalGet('node/add/' . $this->hyphen_type);
++
++    // Assertions.
++    $this->assertRaw('placeholder="Text"', 'Text field placeholder displayed');
++    $this->assertRaw('placeholder="Long text"', 'Textarea field placeholder displayed');
++    $this->assertRaw('placeholder="Summary"', 'Text with summary field placeholder displayed');
++    $this->assertRaw('placeholder="Number"', 'Integer field placeholder displayed');
++
+   }
+ }
+diff --git a/i18n_field_placeholder/i18n_field_placeholder.test b/i18n_field_placeholder/i18n_field_placeholder.test
+index bad76ba..7e0b9a7 100644
+--- a/i18n_field_placeholder/i18n_field_placeholder.test
++++ b/i18n_field_placeholder/i18n_field_placeholder.test
+@@ -116,5 +116,20 @@ class I18nFieldPlaceholderTestCase extends Drupali18nTestCase {
+     $this->drupalGet($this->secondary_language . '/node/add/' . $this->hyphen_type);
+     $this->assertText($label_translation[$this->secondary_language], 'Field label is translated');
+     $this->assertRaw('placeholder="' . $placeholder_translation[$this->secondary_language], 'Field description is translated');
++
++    // Test Label as placeholder feature.
++    $edit = array(
++      'instance[use_title_as_placeholder]' => 1,
++    );
++
++    $this->drupalPost('admin/structure/types/manage/' . $this->hyphen_type . '/fields/field_' . $field_name, $edit, t('Save settings'));
++
++    // Test untranslated values in default language.
++    $this->drupalGet('node/add/' . $this->hyphen_type);
++    $this->assertRaw('placeholder="' . $label, 'Field description is not translated');
++
++    // Test translated values in secondary language.
++    $this->drupalGet($this->secondary_language . '/node/add/' . $this->hyphen_type);
++    $this->assertRaw('placeholder="' . $label_translation[$this->secondary_language], 'Field description is translated');
+   }
+ }
+-- 
+1.7.10.4
+

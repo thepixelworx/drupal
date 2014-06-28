@@ -1,0 +1,52 @@
+/* Page Grids */
+
+.node-type-page .view-mode-full{
+	@include grid-span(12, 1);
+
+		.group-header,
+		.group-left,
+		.group-right,
+		.group-footer{
+			@include grid-span(12, 1);
+			clear: left;
+			}
+
+		@include breakpoint($narrow) {
+			.group-header{
+				@include grid-span(12, 1);
+				}
+
+			.group-left{
+				@include grid-span(8, 1);
+				}
+
+			.group-right{
+				@include grid-span(4, 9);
+				}
+
+			.group-footer{
+				@include grid-span(12, 1);
+				clear: left;
+				}
+		}
+
+		@include breakpoint($wide) {
+			.group-header{
+				@include grid-span(12, 1);
+				}
+
+			.group-left{
+				@include grid-span(8, 1);
+				}
+
+			.group-right{
+				@include grid-span(4, 9);
+				}
+
+			.group-footer{
+				@include grid-span(12, 1);
+				clear: left;
+				}
+		}
+}
+

@@ -1,0 +1,85 @@
+/* FAQS */
+#datatable-1 tr,
+#datatable-2 tr{
+	display: block;
+	}
+
+#datatable-1 thead,
+#datatable-2 thead{
+	display: none;
+	}
+
+
+#datatable-1 caption,
+#datatable-2 caption,
+td.sorting_1{
+	display: none;
+	}
+
+td.views-field-title,
+td.details{
+	display: block;
+	width: 100%;
+	}
+
+	td.views-field-title a{
+		display: block;
+		height: 30px;
+		margin-bottom: -18px;
+		position: relative;
+		text-indent: -9999px;
+		width: 100%;
+		}
+
+/* Page Grids */
+
+.page-support .view-support{
+	@include grid-span(12, 1);
+
+		.group-header,
+		.group-left,
+		.group-right,
+		.group-footer{
+			@include grid-span(12, 1);
+			clear: left;
+			}
+
+		@include breakpoint($exnarrow) {
+			.group-header{
+				@include grid-span(12, 1);
+				}
+
+			.group-left{
+				@include grid-span(8, 1);
+				}
+
+			.group-right{
+				@include grid-span(4, 9);
+				}
+
+			.group-footer{
+				@include grid-span(12, 1);
+				clear: left;
+				}
+		}
+
+		@include breakpoint($wide) {
+			.group-header{
+				@include grid-span(12, 1);
+				}
+
+			.group-left{
+				@include grid-span(8, 1);
+				}
+
+			.group-right{
+				@include grid-span(4, 9);
+				}
+
+			.group-footer{
+				@include grid-span(12, 1);
+				clear: left;
+				}
+		}
+}
+

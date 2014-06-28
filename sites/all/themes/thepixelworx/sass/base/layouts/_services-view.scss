@@ -1,0 +1,53 @@
+// /* Page Grids */
+
+// .page-services .views-row{
+// 	@include grid-span(12, 1);
+// 		padding: 40px 0;
+
+// 		/* Mobile-First Grid Span */
+// 		.group-header,
+// 		.group-left,
+// 		.group-middle,
+// 		.group-right,
+// 		.group-footer{
+// 			@include grid-span(12, 1);
+// 			clear: left;
+// 			}
+
+// 		@include breakpoint($tab) {
+// 			.group-header{
+// 				@include grid-span(12, 1);
+// 				}
+
+// 			.node--services-teaser-image-left .group-left{
+// 				@include grid-span(4, 1);
+// 				}
+
+// 			.node--services-teaser-image-left .group-middle{
+// 				@include grid-span(5, 5);
+// 				}
+
+// 			.node--services-teaser-image-right .group-left{
+// 				@include grid-span(5, 1);
+// 				}
+
+// 			.node--services-teaser-image-right .group-middle{
+// 				@include grid-span(4, 6);
+// 				}
+
+// 			.group-right{
+// 				@include grid-span(3, 10);
+// 				}
+
+// 			.node--services-teaser-image-left .group-footer{
+// 				@include grid-span(8, 5);
+// 				clear: both;
+// 				}
+
+// 			.node--services-teaser-image-right .group-footer{
+// 				@include grid-span(8, 1);
+// 				clear: both;
+// 				}
+// 		}
+// }
+

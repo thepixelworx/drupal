@@ -1,0 +1,38 @@
+/* Page Grids */
+
+.node-type-success-testimonials .view-mode-full{
+	@include grid-span(12, 1);
+
+		.group-header,
+		.group-left,
+		.group-middle,
+		.group-right,
+		.group-footer{
+			@include grid-span(12, 1);
+			clear: left;
+			}
+
+		@include breakpoint($exnarrow) {
+			.group-header{
+				@include grid-span(12, 1);
+				}
+
+			.group-left{
+				@include grid-span(4, 1);
+				}
+
+			.group-middle{
+				@include grid-span(4, 5);
+				}
+
+			.group-right{
+				@include grid-span(4, 9);
+				}
+
+			.group-footer{
+				@include grid-span(12, 1);
+				clear: left;
+				}
+		}
+}
+

@@ -45,7 +45,7 @@
 				}
 
 			/* Responsive Breakpoints */
-			@include breakpoint($small){
+			@include breakpoint($xsmall){
 				div.group-left{
 					@include grid-span(4, 1);
 					}
@@ -66,7 +66,7 @@
 
 
 			/* Responsive Breakpoints */
-			@include breakpoint($small){
+			@include breakpoint($xsmall){
 				.group-header{
 					@include grid-span(12, 1);
 					}

@@ -1,4 +1,3 @@
-
 /* Page Grids */
 
 .four-col-equal{
@@ -14,7 +13,7 @@
 			clear: left;
 			}
 
-		@include breakpoint($small,$medium) {
+		@include breakpoint($xsmall,$small) {
 			.header-content-region{
 				@include grid-span(12, 1);
 				}

@@ -10,7 +10,7 @@
 			clear: left;
 			}
 
-		@include breakpoint($small) {
+		@include breakpoint($xsmall) {
 			.header-content-region{
 				@include grid-span(12, 1);
 				}

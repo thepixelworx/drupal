@@ -16,25 +16,6 @@ footer.l-footer{
 	padding-top: 30px;
 	width: 100%;
 	
-	.l-region--footer{
-		margin: 0 auto;
-		@include breakpoint($xsmall) {
-			width: $xsmall;
-			}
-		@include breakpoint($small) {
-			width: $small;
-			}
-		@include breakpoint($medium) {
-			width: $medium;
-			}
-		@include breakpoint($large) {
-			width: $large;
-			}
-		@include breakpoint($xlarge) {
-			width: $xlarge;
-			}
-	}
-
 /* Global Footer Block Styles ***********************/
 
 	.block{

@@ -101,6 +101,25 @@ html{
 	width: 100%;
 	}
 
+.panel-display{
+	margin: 0 auto;
+	@include breakpoint($xsmall) {
+		width: $xsmall;
+		}
+	@include breakpoint($small) {
+		width: $small;
+		}
+	@include breakpoint($medium) {
+		width: $medium;
+		}
+	@include breakpoint($large) {
+		width: $large;
+		}
+	@include breakpoint($xlarge) {
+		width: $xlarge;
+		}
+}
+
 .panel-display .panel-panel{
 	background: #f6f6f6;
 	padding: 20px;

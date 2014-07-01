@@ -13,7 +13,7 @@
 			clear: left;
 			}
 
-		@include breakpoint($xsmall,$small) {
+		@include breakpoint($xsmall) {
 			.header-content-region{
 				@include grid-span(12, 1);
 				}
@@ -41,7 +41,7 @@
 				}
 		}
 
-		@include breakpoint($large) {
+		@include breakpoint($small) {
 			.header-content-region{
 				@include grid-span(12, 1);
 				}

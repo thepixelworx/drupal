@@ -104,19 +104,19 @@ html{
 .panel-display{
 	margin: 0 auto;
 	@include breakpoint($xsmall) {
-		width: $xsmall;
+		width: $xsmall - 20px;
 		}
 	@include breakpoint($small) {
-		width: $small;
+		width: $small - 20px;
 		}
 	@include breakpoint($medium) {
-		width: $medium;
+		width: $medium - 20px;
 		}
 	@include breakpoint($large) {
-		width: $large;
+		width: $large - 20px;
 		}
 	@include breakpoint($xlarge) {
-		width: $xlarge;
+		width: $xlarge - 20px;
 		}
 }
 

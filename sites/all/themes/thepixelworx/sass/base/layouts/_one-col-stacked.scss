@@ -3,6 +3,25 @@
 .one-col{
 	@include grid-span(12, 1);
 
+	.panel-display{
+		margin: 0 auto;
+		@include breakpoint($xsmall) {
+			width: $xsmall;
+			}
+		@include breakpoint($small) {
+			width: $small;
+			}
+		@include breakpoint($medium) {
+			width: $medium;
+			}
+		@include breakpoint($large) {
+			width: $large;
+			}
+		@include breakpoint($xlarge) {
+			width: $xlarge;
+			}
+	}
+
 		.header-content-region,
 		.middle-content-region,
 		.footer-content-region{

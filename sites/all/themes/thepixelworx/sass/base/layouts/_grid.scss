@@ -8,20 +8,23 @@
                 float: none;
                 margin: 0 auto;
                 padding: 40px 0;
+                @include breakpoint($xxsmall) {
+                        width: $xxsmall - 20px;
+                        }
                 @include breakpoint($xsmall) {
-                        width: $xsmall;
+                        width: $xsmall - 20px;
                         }
                 @include breakpoint($small) {
-                        width: $small;
+                        width: $small - 20px;
                         }
                 @include breakpoint($medium) {
-                        width: $medium;
+                        width: $medium - 20px;
                         }
                 @include breakpoint($large) {
-                        width: $large;
+                        width: $large - 20px;
                         }
                 @include breakpoint($xlarge) {
-                        width: $xlarge;
+                        width: $xlarge - 20px;
                         }
                 }
 

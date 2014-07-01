@@ -104,6 +104,9 @@ html{
 .l-region--footer,
 .panel-display{
 	margin: 0 auto;
+	@include breakpoint($xxsmall) {
+		width: $xxsmall - 20px;
+		}
 	@include breakpoint($xsmall) {
 		width: $xsmall - 20px;
 		}

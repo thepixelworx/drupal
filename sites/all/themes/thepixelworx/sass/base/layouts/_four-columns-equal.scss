@@ -41,6 +41,34 @@
 				}
 		}
 
+		@include breakpoint($medium) {
+			.header-content-region{
+				@include grid-span(12, 1);
+				}
+
+			.left-content-region{
+				@include grid-span(6, 1);
+				}
+
+			.middle-left-content-region{
+				@include grid-span(6, 7);
+				clear: left;
+				}
+
+			.middle-right-content-region{
+				@include grid-span(6, 1);
+				}
+
+			.right-content-region{
+				@include grid-span(6, 7);
+				}
+
+			.footer-content-region{
+				@include grid-span(12, 1);
+				clear: left;
+				}
+		}
+
 		@include breakpoint($large) {
 			.header-content-region{
 				@include grid-span(12, 1);

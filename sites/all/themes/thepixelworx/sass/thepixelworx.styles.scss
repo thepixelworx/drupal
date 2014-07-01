@@ -18,6 +18,7 @@
 // dependencies shouldn't be a problem.
 @import "variables/**/*";
 @import "abstractions/**/*";
+@import "mixins/**/*";
 @import "components/**/*";
 @import "base/**/*";
 @import "functions";
@@ -64,9 +65,6 @@
 
 /* Super Structure ***********************/
 
-
-.l-region--navigation{display: none;} /* Temporarily Hides the Main menu */
-
 html{
 	height: 100%;
 	margin: 0;
@@ -94,12 +92,30 @@ html{
 		}
 }
 
+.center-wrapper,
+.header-content-region,
+.footer-content-region{
+	@include clearfix;
+	float: left;
+	margin-bottom: 20px;
+	width: 100%;
+	}
+
+.panel-display .panel-panel{
+	background: #f6f6f6;
+	padding: 20px;
+	}
+
+.one-col .panel-display .middle-content-region.panel-panel{
+	background: #f6f6f6;
+	padding: 20px 0;
+	}
+
+.grid .views-column{background: #999; padding: 20px; margin-bottom: 20px; min-height: 200px;}
 
 /* Branding ***********************/
 
-.l-branding{
-	position: absolute;
-	}
+
 
 /* Main Content ***********************/
 

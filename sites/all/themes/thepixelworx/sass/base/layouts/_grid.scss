@@ -1,0 +1,106 @@
+/* Page Grids */
+
+.grid .view-content{
+        @include grid-span(12, 1);
+
+        .views-responsive-grid{
+                @include grid-span(12, 1);
+                float: none;
+                margin: 0 auto;
+                padding: 40px 0;
+                @include breakpoint($xsmall) {
+                        width: $xsmall;
+                        }
+                @include breakpoint($small) {
+                        width: $small;
+                        }
+                @include breakpoint($medium) {
+                        width: $medium;
+                        }
+                @include breakpoint($large) {
+                        width: $large;
+                        }
+                @include breakpoint($xlarge) {
+                        width: $xlarge;
+                        }
+                }
+
+                .views-column{
+                        @include grid-span(12, 1);
+                        }
+
+                @include breakpoint($xsmall) {
+                        .views-column:nth-child(odd){
+                                @include grid-span(6, 1);
+                                }
+
+                        .views-column:nth-child(even){
+                                @include grid-span(6, 7);
+                                }
+
+                        .views-column:nth-child(2n-1){
+                                clear: left;
+                                }
+                }
+
+                @include breakpoint($small) {
+                        .views-column:nth-child(3n+1){
+                                @include grid-span(4, 1);
+                                clear: left;
+                                }
+
+                        .views-column:nth-child(3n+2){
+                                @include grid-span(4, 5);
+                                }
+
+                        .views-column:nth-child(3n+3){
+                                @include grid-span(4, 9);
+                                }
+                }
+
+                @include breakpoint($large) {
+                        .views-column:nth-child(4n+1){
+                                @include grid-span(3, 1);
+                                clear: left
+                                }
+
+                        .views-column:nth-child(4n+2){
+                                @include grid-span(3, 4);
+                                }
+
+                        .views-column:nth-child(4n+3){
+                                @include grid-span(3, 7);
+                                }
+
+                        .views-column:nth-child(4n+4){
+                                @include grid-span(3, 10);
+                                }
+                }
+
+                @include breakpoint($xlarge) {
+                        .views-column:nth-child(6n+1){
+                                @include grid-span(2, 1);
+                                clear: left;
+                                }
+
+                        .views-column:nth-child(6n+2){
+                                @include grid-span(2, 3);
+                                }
+
+                        .views-column:nth-child(6n+3){
+                                @include grid-span(2, 5);
+                                }
+
+                        .views-column:nth-child(6n+4){
+                                @include grid-span(2, 7);
+                                }
+
+                        .views-column:nth-child(6n+5){
+                                @include grid-span(2, 9);
+                                }
+
+                        .views-column:nth-child(6n+6){
+                                @include grid-span(2, 11);
+                                }
+                }
+}

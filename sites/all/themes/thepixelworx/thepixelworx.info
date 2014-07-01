@@ -19,14 +19,19 @@ stylesheets[all][] = css/thepixelworx.no-query.css
 scripts[] = js/thepixelworx.behaviors.js
 
 ; ========================================
+; Panels Layouts
+; ========================================
+plugins[panels][layouts] = layouts
+
+; ========================================
 ; Regions
 ; ========================================
 regions[branding] = Branding
 regions[header] = Header
 regions[navigation] = Navigation
-regions[highlighted] = Highlighted
-regions[help] = Help
+;regions[highlighted] = Highlighted
+;regions[help] = Help
 regions[content] = Content
-regions[sidebar_first] = First Sidebar
-regions[sidebar_second] = Second Sidebar
+;regions[sidebar_first] = First Sidebar
+;regions[sidebar_second] = Second Sidebar
 regions[footer] = Footer

@@ -1,0 +1,186 @@
+@import "../functions";
+
+/*-----------------------------------------------------------------------------------*/
+/* Default Variables
+/*-----------------------------------------------------------------------------------*/
+
+$experimental: true !default;
+
+// The default font-size is set to 100% of the browser style sheet (usually 16px)
+// for compatibility with browser-based text zoom or user-set defaults.
+
+// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
+// If you want your base font-size to be different and not have it affect the grid breakpoints,
+// set $rem-base to $base-font-size and make sure $base-font-size is a px value.
+
+$base-font-size: 12px !default;
+
+// $base-line-height is 24px while $base-font-size is 16px
+$base-line-height: 150% !default;
+
+
+// We use these to control various global styles
+$body-bg: #fff !default;
+$body-font-color: #333 !default;
+$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$body-font-weight: normal !default;
+$body-font-style: normal !default;
+
+// We use this to control font-smoothing
+$font-smoothing: antialiased !default;
+
+// We use these to control text direction settings
+$text-direction: ltr !default;
+
+// NOTE: No need to change this conditional statement, $text-direction variable controls it all.
+$default-float: left !default;
+$opposite-direction: right !default;
+@if $text-direction == ltr {
+  $default-float: left;
+  $opposite-direction: right;
+} @else {
+  $default-float: right;
+  $opposite-direction: left;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Default Color Settings
+/*-----------------------------------------------------------------------------------*/
+
+
+@include clearfix;
+
+// We use these as default colors throughout 
+$primary-color: #1E70B6 !default;
+$secondary-color: #ccc !default;
+$alert-color: #d9534f !default;
+$success-color: #5cb85c !default;
+$warning-color: #f0ad4e !default;
+$info-color: #5bc0de !default;
+
+// Greys 
+$grey-darker: lighten(#000, 13.5%) !default; // #222
+$grey-dark: lighten(#000, 20%) !default;   // #333
+$grey: lighten(#000, 33.5%) !default; // #555
+$grey-light: lighten(#000, 60%) !default;   // #999
+$grey-lighter: lighten(#000, 93.5%) !default; // #eee
+$off-white: #f6f6f6 !default;
+
+// Scaffolding 
+$body-bg: #fff !default;
+$body-font-color: $grey-dark !default;
+
+// Links 
+$link-color: $primary-color !default;
+$link-hover-color: darken($link-color, 15%) !default;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Default Effects Settings
+/*-----------------------------------------------------------------------------------*/
+
+// We use these to make sure border radius matches unless we want it different.
+$global-radius: 3px !default;
+$global-rounded: 1000px !default;
+
+// We use these to control inset shadow shiny edges and depressions.
+$shiny-edge-size: 0 1px 0 !default;
+$shiny-edge-color: rgba(#fff, .5) !default;
+$shiny-edge-active-color: rgba(#000, .2) !default;
+
+// We use this to control whether or not CSS classes come through in the gem files.
+$include-html-classes: true !default;
+$include-print-styles: true !default;
+$include-html-global-classes: $include-html-classes !default;
+
+
+//We use this as cursors values for enabling the option of having custom cursors in the whole site's stylesheet
+$cursor-crosshair-value: crosshair !default;
+$cursor-default-value: default !default;
+$cursor-pointer-value: pointer !default;
+$cursor-help-value: help !default;
+$cursor-text-value: text !default;
+
+/*-----------------------------------------------------------------------------------*/
+/* Global settings
+/*-----------------------------------------------------------------------------------*/
+
+@if $include-html-global-classes {
+
+    // Set box-sizing globally to handle padding and border widths
+    *,
+    *:before,
+    *:after {
+        @include box-sizing(border-box);
+        }
+
+    html,
+    body {
+        font-size: $base-font-size;
+        }
+
+    // Default body styles
+    body {
+        background: $body-bg;
+        color: $body-font-color;
+        padding: 0;
+        margin: 0;
+        font-family: $body-font-family;
+        font-weight: $body-font-weight;
+        font-style: $body-font-style;
+        line-height: $base-line-height;
+        position: relative;
+        cursor: $cursor-default-value;
+        }
+
+    a:hover{
+        cursor: $cursor-pointer-value;
+        }
+
+    // Grid Defaults to get images and embeds to work properly
+    img,
+    object,
+    embed{
+        max-width: 100%;
+        height: auto;
+        }
+
+    object,
+    embed{
+        height: 100%;
+        }
+    
+    img {
+        -ms-interpolation-mode: bicubic;
+        }
+
+    #map_canvas,
+        .map_canvas {
+            img,
+            embed,
+            object {
+            max-width: none !important;
+        }
+    }
+
+    // Get rid of gap under images by making them display: inline-block; by default
+    img{
+        display: inline-block;
+        vertical-align: middle;
+        }
+
+/*-----------------------------------------------------------------------------------*/
+/* Global Form Resets
+/*-----------------------------------------------------------------------------------*/
+
+    // Make sure textarea takes on height automatically
+    textarea{
+        height: auto;
+        min-height: 50px;
+        }
+
+    // Make select elements 100% width by default
+    select {
+        width: 100%;
+        }
+}

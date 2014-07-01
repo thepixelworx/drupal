@@ -1,0 +1,103 @@
+/* Page Styling */
+
+.list .views-row-odd{
+	background: #f6f6f6;
+	}
+
+.list .views-row-even{
+	background: #fff;
+	}
+
+.list .views-row{
+	@include grid-span(12, 1);
+	padding: 40px 0;
+
+	>div:first-child{
+		margin: 0 auto;
+		@include breakpoint($xsmall) {
+			width: $xsmall;
+			}
+		@include breakpoint($small) {
+			width: $small;
+			}
+		@include breakpoint($medium) {
+			width: $medium;
+			}
+		@include breakpoint($large) {
+			width: $large;
+			}
+		@include breakpoint($xlarge) {
+			width: $xlarge;
+			}
+	}
+
+/* Display Suite - 2 Column Stacked -----------*/
+
+		/* Mobile-First Breakpoint */
+
+		.ds-2col-stacked{
+			> div:not(.contextual-links-wrapper){
+				@include grid-span(12, 1);
+				clear: left;
+				}
+
+			/* Responsive Breakpoints */
+			@include breakpoint($small){
+				div.group-left{
+					@include grid-span(4, 1);
+					}
+				div.group-right{
+					@include grid-span(8, 5);
+					}
+			}
+		}
+
+/* Display Suite - 3 Column Stacked Equal -----------*/
+
+		/* Mobile-First Breakpoint */
+		.ds-3col-stacked-equal{
+			> div:not(.contextual-links-wrapper){
+				@include grid-span(12, 1);
+				clear: left;
+				}
+
+
+			/* Responsive Breakpoints */
+			@include breakpoint($small){
+				.group-header{
+					@include grid-span(12, 1);
+					}
+				.group-right{
+					@include grid-span(3, 10);
+					}
+
+				&.odd{ /* Add this Classes to Display Suite! */
+					.group-left{
+						@include grid-span(4, 1);
+						}
+					.group-middle{
+						@include grid-span(5, 5);
+						}
+					.group-footer{
+						@include grid-span(8, 5);
+						clear: both;
+						}
+				}
+
+				&.even{ /* Add this Classes to Display Suite! */
+					.group-middle{
+						@include grid-span(4, 6);
+						}
+					.group-left{
+						@include grid-span(5, 1);
+						}
+					.group-footer{
+						@include grid-span(8, 1);
+						clear: both;
+						}
+				}
+			}
+		}
+
+}
+

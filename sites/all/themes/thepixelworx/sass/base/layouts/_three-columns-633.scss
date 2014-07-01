@@ -1,0 +1,61 @@
+/* Page Grids */
+
+.three-col-633{
+	@include grid-span(12, 1);
+
+		.header-content-region,
+		.left-content-region,
+		.middle-content-region,
+		.right-content-region,
+		.footer-content-region{
+			@include grid-span(12, 1);
+			clear: left;
+			}
+
+		@include breakpoint($small) {
+			.header-content-region{
+				@include grid-span(12, 1);
+				}
+
+			.left-content-region{
+				@include grid-span(6, 1);
+				}
+
+			.middle-content-region{
+				@include grid-span(3, 7);
+				}
+
+			.right-content-region{
+				@include grid-span(3, 10);
+				}
+
+			.footer-content-region{
+				@include grid-span(12, 1);
+				clear: left;
+				}
+		}
+
+		@include breakpoint($large) {
+			.header-content-region{
+				@include grid-span(12, 1);
+				}
+
+			.left-content-region{
+				@include grid-span(6, 1);
+				}
+
+			.middle-content-region{
+				@include grid-span(3, 7);
+				}
+
+			.right-content-region{
+				@include grid-span(3, 10);
+				}
+
+			.footer-content-region{
+				@include grid-span(12, 1);
+				clear: left;
+				}
+		}
+}
+

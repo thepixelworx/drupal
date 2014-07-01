@@ -18,20 +18,20 @@ footer.l-footer{
 	
 	.l-region--footer{
 		margin: 0 auto;
-		@include breakpoint($exnarrow) {
-			width: $exnarrow;
+		@include breakpoint($xsmall) {
+			width: $xsmall;
 			}
-		@include breakpoint($narrow) {
-			width: $narrow;
+		@include breakpoint($small) {
+			width: $small;
 			}
-		@include breakpoint($normal) {
-			width: $normal;
+		@include breakpoint($medium) {
+			width: $medium;
 			}
-		@include breakpoint($wide) {
-			width: $wide;
+		@include breakpoint($large) {
+			width: $large;
 			}
-		@include breakpoint($exwide) {
-			width: $exwide;
+		@include breakpoint($xlarge) {
+			width: $xlarge;
 			}
 	}
 

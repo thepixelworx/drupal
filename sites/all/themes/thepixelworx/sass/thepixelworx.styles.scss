@@ -28,7 +28,15 @@
 /* Breakpoint labelling
 /*-----------------------------------------------------------------------------------*/
 
-/*.l-main:before{
+$mob: 0px; 
+$xxsmall: 640px; 
+$xsmall: 768px;
+$small: 960px;
+$medium: 1024px;
+$large: 1200px; 
+$xlarge: 1400px;
+
+.l-main:before{
 	background: hsla(0,0%,0%,0.8);
 	bottom: 3px;
 	color: hsla(0,0%,100%,1);
@@ -41,23 +49,26 @@
 	@include breakpoint($mob) {
 		content: "Mobile";
 		}
-	@include breakpoint($exnarrow) {
-		content: "Extra Narrow";
+	@include breakpoint($xxsmall) {
+		content: "XX Small";
 		}
-	@include breakpoint($narrow) {
-		content: "Narrow";
+	@include breakpoint($xsmall) {
+		content: "X Small";
 		}
-	@include breakpoint($normal) {
-		content: "Normal";
+	@include breakpoint($small) {
+		content: "Small";
 		}
-	@include breakpoint($wide) {
-		content: "Wide";
+	@include breakpoint($medium) {
+		content: "Medium";
 		}
-	@include breakpoint($exwide) {
-		content: "Extra Wide";
+	@include breakpoint($large) {
+		content: "Large";
+		}
+	@include breakpoint($xlarge) {
+		content: "X Large";
 		}
 	}
-*/
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Global Structure

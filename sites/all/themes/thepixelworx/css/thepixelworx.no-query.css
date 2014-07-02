@@ -7081,15 +7081,12 @@ footer.l-footer {
   width: 100%;
   /* Global Footer Block Styles ***********************/
   /* Logo Block Styles ***********************/ }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/footer\/_footer\.scss}line{font-family:\0000319}}
-  footer.l-footer .l-region--footer {
-    margin: 0 auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/footer\/_footer\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/footer\/_footer\.scss}line{font-family:\0000321}}
   footer.l-footer .block {
     float: left;
     overflow: hidden;
     width: 20%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/footer\/_footer\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/footer\/_footer\.scss}line{font-family:\0000326}}
     footer.l-footer .block img.lp-logo {
       display: block;
       margin: 0 auto;
@@ -7136,6 +7133,28 @@ footer.l-footer {
 /* Branding Global Styles
 /*-----------------------------------------------------------------------------------*/
 /* Page Grids */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_four-columns-equal\.scss}line{font-family:\000033}}
+.four-col-equal {
+  width: 100%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_four-columns-equal\.scss}line{font-family:\0000311}}
+  .four-col-equal .header-content-region,
+  .four-col-equal .left-content-region,
+  .four-col-equal .middle-left-content-region,
+  .four-col-equal .middle-right-content-region,
+  .four-col-equal .right-content-region,
+  .four-col-equal .footer-content-region {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    clear: left; }
+
+/* Page Grids */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_grid\.scss}line{font-family:\000033}}
 .grid .view-content {
   width: 100%;
@@ -7153,7 +7172,7 @@ footer.l-footer {
     float: none;
     margin: 0 auto;
     padding: 40px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_grid\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_grid\.scss}line{font-family:\0000331}}
   .grid .view-content .views-column {
     width: 100%;
     float: right;
@@ -7185,10 +7204,10 @@ footer.l-footer {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_list\.scss}line{font-family:\0000315}}
   .list .views-row > div:first-child {
     margin: 0 auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_list\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_list\.scss}line{font-family:\0000341}}
   .list .views-row .ds-2col-stacked {
     /* Responsive Breakpoints */ }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_list\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_list\.scss}line{font-family:\0000342}}
     .list .views-row .ds-2col-stacked > div:not(.contextual-links-wrapper) {
       width: 100%;
       float: right;
@@ -7196,10 +7215,10 @@ footer.l-footer {
       margin-right: 0;
       clear: none;
       clear: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_list\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_list\.scss}line{font-family:\0000361}}
   .list .views-row .ds-3col-stacked-equal {
     /* Responsive Breakpoints */ }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_list\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_list\.scss}line{font-family:\0000362}}
     .list .views-row .ds-3col-stacked-equal > div:not(.contextual-links-wrapper) {
       width: 100%;
       float: right;
@@ -7291,14 +7310,14 @@ footer.l-footer {
     clear: left; }
 
 /* Page Grids */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_three-columns-equal\.scss}line{font-family:\000034}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_three-columns-equal\.scss}line{font-family:\000033}}
 .three-col-equal {
   width: 100%;
   float: right;
   margin-left: 0;
   margin-right: 0;
   clear: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_three-columns-equal\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/base\/layouts\/_three-columns-equal\.scss}line{font-family:\0000310}}
   .three-col-equal .header-content-region,
   .three-col-equal .left-content-region,
   .three-col-equal .middle-content-region,
@@ -7546,54 +7565,36 @@ footer.l-footer {
 /*-----------------------------------------------------------------------------------*/
 /* Breakpoint labelling
 /*-----------------------------------------------------------------------------------*/
-/*.l-main:before{
-	background: hsla(0,0%,0%,0.8);
-	bottom: 3px;
-	color: hsla(0,0%,100%,1);
-	line-height: 30px;
-	position: fixed;
-	right: 0;
-	text-indent: 10px;
-	width: 200px;
-	z-index: 50;
-	@include breakpoint($mob) {
-		content: "Mobile";
-		}
-	@include breakpoint($exnarrow) {
-		content: "Extra Narrow";
-		}
-	@include breakpoint($narrow) {
-		content: "Narrow";
-		}
-	@include breakpoint($normal) {
-		content: "Normal";
-		}
-	@include breakpoint($wide) {
-		content: "Wide";
-		}
-	@include breakpoint($exwide) {
-		content: "Extra Wide";
-		}
-	}
-*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\0000339}}
+.l-main:before {
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 3px;
+  color: white;
+  line-height: 30px;
+  position: fixed;
+  right: 0;
+  text-indent: 10px;
+  width: 200px;
+  z-index: 50; }
+
 /*-----------------------------------------------------------------------------------*/
 /* Global Structure
 /*-----------------------------------------------------------------------------------*/
 /* Super Structure ***********************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\0000379}}
 html, html body {
   height: 100%;
   margin: 0;
   min-width: 320px;
   padding: 0;
   position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\0000385}}
   html body {
     left: 0;
     min-height: 100%;
     width: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\0000393}}
 .l-page {
   height: auto;
   margin-bottom: -300px;
@@ -7601,11 +7602,11 @@ html, html body {
   padding: 0;
   position: relative;
   width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003101}}
   .l-page .push {
     height: 300px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003108}}
 .center-wrapper,
 .header-content-region,
 .footer-content-region {
@@ -7632,17 +7633,22 @@ html, html body {
   .footer-content-region:after {
     clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003116}}
+.l-region--footer,
+.panel-display {
+  margin: 0 auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003138}}
 .panel-display .panel-panel {
   background: #f6f6f6;
   padding: 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003143}}
 .one-col .panel-display .middle-content-region.panel-panel {
   background: #f6f6f6;
   padding: 20px 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003148}}
 .grid .views-column {
   background: #999;
   padding: 20px;

@@ -1,30 +1,28 @@
-name = mjkane
-description = A flexible, recolorable theme with many regions.
-package = Core
-version = VERSION
+name = MJ Kane
+description = Please provide a description for your theme.
+base theme = thepixelworx
+screenshot = screenshot.png
+engine = phptemplate
 core = 7.x
 
-;stylesheets[all][] = css/layout.css
-;stylesheets[all][] = css/style.css
-;stylesheets[all][] = css/colors.css
-;stylesheets[print][] = css/print.css
-stylesheets[all][] = css/foundation.css
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = css/mjkane.normalize.css
+stylesheets[all][] = css/mjkane.hacks.css
+stylesheets[all][] = css/mjkane.styles.css
+stylesheets[all][] = css/mjkane.no-query.css
 
+; ========================================
+; Scripts
+; ========================================
+scripts[] = js/mjkane.behaviors.js
+
+; ========================================
+; Regions
+; ========================================
+regions[branding] = Branding
 regions[header] = Header
-regions[page_top] = Page top
-regions[page_bottom] = Page bottom
-
+regions[navigation] = Navigation
 regions[content] = Content
-
 regions[footer] = Footer
-
-plugins[panels][layouts] = layouts
-
-settings[shortcut_module_link] = 0
-
-
-; Information added by Drupal.org packaging script on 2014-05-08
-version = "7.28"
-project = "drupal"
-datestamp = "1399522731"
-

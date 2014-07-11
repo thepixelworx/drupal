@@ -1,5 +1,8 @@
+/* No files to import found in abstractions/**\/* */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/mjkane\.thepixelworx\.co\/themes\/mjkane\/sass\/base\/_media\.scss}line{font-family:\000031}}
 img, media {
-  max-width: 100%;
-}
+  max-width: 100%; }
 
-/* No files to import found in partials/components/**\/* */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/mjkane\.thepixelworx\.co\/themes\/mjkane\/sass\/mjkane\.styles\.scss}line{font-family:\0000324}}
+body {
+  background: transparent url(../img/bg_html.jpg) no-repeat center 200px; }

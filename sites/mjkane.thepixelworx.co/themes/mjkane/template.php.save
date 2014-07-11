@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Template overrides as well as (pre-)process and alter hooks for the
+ * MJ Kane theme.
+ */
+
+function phptemplate_menu_tree($tree) {
+  return '<ul class="fuck menu"'. 'id="' . $PUT-VARIABLE-HERE . '">' . $tree .'</ul>';
+}
+
+function learningpool_menu_tree__menu_mega_menu($variables) {
+    return '<nav class="main"><ul class="clearfix">' . $variables['tree'] . '</ul></nav>';
+}

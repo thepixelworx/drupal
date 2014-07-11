@@ -9506,11 +9506,6 @@ html, html body {
     .panel-display {
       width: 1380px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003138}}
-.panel-display .panel-panel {
-  background: #f6f6f6;
-  padding: 20px; }
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal\/sites\/all\/themes\/thepixelworx\/sass\/thepixelworx\.styles\.scss}line{font-family:\00003143}}
 .one-col .panel-display .middle-content-region.panel-panel {
   background: #f6f6f6;

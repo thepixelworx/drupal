@@ -1,15 +1,15 @@
 // Media Query Ranges
-$small-range: (0px, 640px) !default; //mob
-$medium-range: (641px, 1024px) !default; //exnarrow
-$normal-range: (1025px, 1200px) !default; //narrow
-$large-range: (1201px, 1240px) !default; //normal
-$xlarge-range: (1401px, 1600px) !default; //wide
-$xxlarge-range: (1601px) !default; //exwide
+//$small-range: (0px, 640px) !default; //mob
+//$medium-range: (641px, 1024px) !default; //exnarrow
+//$normal-range: (1025px, 1200px) !default; //narrow
+//$large-range: (1201px, 1240px) !default; //normal
+//$xlarge-range: (1401px, 1600px) !default; //wide
+//$xxlarge-range: (1601px) !default; //exwide
 
 // Orientation & Medium
-$screen: "only screen" !default;
-$landscape: "#{$screen} and (orientation: landscape)" !default;
-$portrait: "#{$screen} and (orientation: portrait)" !default;
+//$screen: "only screen" !default;
+//$landscape: "#{$screen} and (orientation: landscape)" !default;
+/$portrait: "#{$screen} and (orientation: portrait)" !default;
 
 // Grids
 $grids: 12;
